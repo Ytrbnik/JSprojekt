@@ -34,7 +34,7 @@ function rememberMyFilms() {
     }
 }
 
-//rememberMyFilms();
+rememberMyFilms();
 
 function detectPrsonalLevel() {
     if (personalMovieBD.count < 10) {
@@ -48,7 +48,7 @@ function detectPrsonalLevel() {
     }
 }
 
-//detectPrsonalLevel();
+detectPrsonalLevel();
 
 function showMyDB(hidden) {
     if (!hidden) {
