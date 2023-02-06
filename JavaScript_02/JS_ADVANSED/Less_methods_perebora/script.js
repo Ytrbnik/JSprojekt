@@ -58,3 +58,16 @@ const res = arr.reduce((sum, current) => `${sum}, ${current}`);
 
 console.log(res);
 */
+
+const obj = {
+    ivan: 'persone',
+    ann: 'persone',
+    cat: 'animal',
+    dog: 'animal'
+};
+
+const newArr = Object.entries(obj)
+.filter(item => item[1] === 'persone')
+.map(item => item[0]);
+
+console.log(newArr);
