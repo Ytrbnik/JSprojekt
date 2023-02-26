@@ -2,9 +2,13 @@
 
 fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
 .then(response => response.json())
-.then((json) => {
-    let usdCourse = json[24].rate;
+.then(data => {
+    let curses = data;
 
+    console.log(curses);
+    let usd = curses[24].rate;
+
+    console.log(usd);
     const userImput = prompt('Введіть ціну за таксі черех ","', '');
 
     const arr = userImput.split(', ');
@@ -27,5 +31,5 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
         showMyTaxi();
     }
 
-    taxiCounter(taxi, usdCourse);
+    taxiCounter(taxi, usd);
 });
