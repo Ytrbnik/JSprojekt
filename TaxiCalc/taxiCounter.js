@@ -6,8 +6,14 @@ fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
     .then((json) => {
         let usdCourse = json[24].rate;
 
+        const userImput = prompt('Введіть ціну за таксі черех ","', '');
 
-        const taxi = [];
+        const arr = userImput.split(', ');
+
+        const taxi = arr.map(str => {
+                const num = parseInt(str);
+                return isNaN(num) ? 0 :num;
+        });
 
         function taxiCounter (taxiValue, usd) {
             const taxiTotal = taxiValue.reduce((sum, current) => sum + current);

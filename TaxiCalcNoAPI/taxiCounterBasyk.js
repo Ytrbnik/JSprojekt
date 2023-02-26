@@ -2,7 +2,14 @@
 
         let usdCourse = 36.57;
 
-        let taxi = [3657];
+        const userImput = prompt('Введіть ціну за таксі черех ","', '');
+
+        const arr = userImput.split(', ');
+
+        const taxi = arr.map(str => {
+                const num = parseInt(str);
+                return isNaN(num) ? 0 :num;
+        });
 
         function taxiCounter (taxiValue, usd) {
             const taxiTotal = taxiValue.reduce((sum, current) => sum + current);
